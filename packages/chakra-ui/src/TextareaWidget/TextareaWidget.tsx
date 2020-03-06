@@ -2,8 +2,8 @@ import React from 'react';
 
 import { WidgetProps } from 'react-jsonschema-form';
 
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
+import { FormControl } from '@chakra-ui/core'
+import { TextField } from '@chakra-ui/core'
 
 type CustomWidgetProps = WidgetProps & {
   options: any;

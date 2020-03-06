@@ -1,9 +1,9 @@
 import React from 'react';
 
-import FormControl from '@material-ui/core/FormControl';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
+import { FormControl } from '@chakra-ui/core'
+import { MenuItem } from '@chakra-ui/core'
+import { Select } from '@chakra-ui/core'
+import { InputLabel } from '@chakra-ui/core'
 
 // import { WidgetProps } from 'react-jsonschema-form';
 import { asNumber, guessType } from 'react-jsonschema-form/lib/utils';

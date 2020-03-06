@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
+import { FormControl } from '@chakra-ui/core'
+import { TextField } from '@chakra-ui/core'
 
 import { WidgetProps } from 'react-jsonschema-form';
 

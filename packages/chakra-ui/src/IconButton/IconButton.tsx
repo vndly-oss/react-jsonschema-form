@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Button from '@material-ui/core/Button';
-import Add from '@material-ui/icons/Add';
-import ArrowUpward from '@material-ui/icons/ArrowUpward';
-import ArrowDownward from '@material-ui/icons/ArrowDownward';
-import Remove from '@material-ui/icons/Remove';
-import { IconButtonProps as MuiIconButtonProps } from '@material-ui/core/IconButton';
+import { Button } from '@chakra-ui/core'
+import { Add } from '@chakra-ui/core'
+import { ArrowUpward } from '@chakra-ui/core'
+import { ArrowDownward } from '@chakra-ui/core'
+import { Remove } from '@chakra-ui/core'
+import { IconButtonProps as MuiIconButtonProps } from '@chakra-ui/core/IconButton';
 
 const mappings: any = {
   remove: <Remove />,

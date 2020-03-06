@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Grid from '@material-ui/core/Grid';
+import { Grid } from '@chakra-ui/core'
 import { makeStyles } from '@material-ui/styles';
 
 import { ObjectFieldTemplateProps } from 'react-jsonschema-form';

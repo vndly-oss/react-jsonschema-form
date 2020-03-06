@@ -1,8 +1,8 @@
 import React from 'react';
 
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
+import { FormControl } from '@chakra-ui/core'
+import { Input } from '@chakra-ui/core'
+import { InputLabel } from '@chakra-ui/core'
 
 import { WidgetProps } from 'react-jsonschema-form';
 

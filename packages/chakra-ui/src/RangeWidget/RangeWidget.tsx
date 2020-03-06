@@ -1,9 +1,9 @@
 import React from 'react';
 
-import FormControl from '@material-ui/core/FormControl';
-import Grid from '@material-ui/core/Grid';
-import Slider from '@material-ui/core/Slider';
-import FormLabel from '@material-ui/core/FormLabel';
+import { FormControl } from '@chakra-ui/core'
+import { Grid } from '@chakra-ui/core'
+import { Slider } from '@chakra-ui/core'
+import { FormLabel } from '@chakra-ui/core'
 
 import { rangeSpec } from 'react-jsonschema-form/lib/utils';
 import { WidgetProps } from 'react-jsonschema-form';

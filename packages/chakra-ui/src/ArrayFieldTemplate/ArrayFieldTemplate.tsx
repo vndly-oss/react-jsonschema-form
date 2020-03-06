@@ -5,9 +5,8 @@ import {
   getDefaultRegistry,
 } from 'react-jsonschema-form/lib/utils';
 
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
+import { Box } from '@chakra-ui/core'
+import { Grid } from '@chakra-ui/core'
 
 import { ArrayFieldTemplateProps, IdSchema } from 'react-jsonschema-form';
 
@@ -77,9 +76,9 @@ const DefaultArrayItem = (props: any) => {
     <Grid container={true} key={props.index} alignItems="center">
       <Grid item={true} xs>
         <Box mb={2}>
-          <Paper elevation={2}>
+          <Box elevation={2}>
             <Box p={2}>{props.children}</Box>
-          </Paper>
+          </Box>
         </Box>
       </Grid>
 
@@ -161,7 +160,7 @@ const DefaultFixedArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
 
 const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
   return (
-    <Paper elevation={2}>
+    <Box elevation={2}>
       <Box p={2}>
         <ArrayFieldTitle
           key={`array-field-title-${props.idSchema.$id}`}
@@ -200,7 +199,7 @@ const DefaultNormalArrayFieldTemplate = (props: ArrayFieldTemplateProps) => {
           )}
         </Grid>
       </Box>
-    </Paper>
+    </Box>
   );
 };
 

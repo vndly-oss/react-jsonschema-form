@@ -2,9 +2,9 @@ import React from 'react';
 
 import { FieldProps } from 'react-jsonschema-form';
 
-import Box from '@material-ui/core/Box';
-import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
+import { Box } from '@chakra-ui/core'
+import { Divider } from '@chakra-ui/core'
+import { Typography } from '@chakra-ui/core'
 
 const TitleField = ({ title }: FieldProps) => (
   <>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { Checkbox } from '@chakra-ui/core'
+import { FormControl } from '@chakra-ui/core'
+import { FormControlLabel } from '@chakra-ui/core'
 
 import { WidgetProps } from 'react-jsonschema-form';
 

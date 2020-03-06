@@ -78,12 +78,12 @@ Exports `material-ui` theme, fields and widgets for `react-jsonschema-form`.
 
 ### Prerequisites
 
-- `@material-ui/core >= 4.2.0` ([in 4.2.0, the `slider` component was added to the core](https://github.com/mui-org/material-ui/pull/16416))
-- `@material-ui/icons`
+- `@chakra-ui/core >= 4.2.0` ([in 4.2.0, the `slider` component was added to the core](https://github.com/mui-org/material-ui/pull/16416))
+- `@chakra-ui/core`
 - `react-jsonschema-form >= 1.6.0` ([in 1.6.0, the `withTheme` HOC was added](https://github.com/mozilla-services/react-jsonschema-form/pull/1226))
 
 ```sh
-yarn add @material-ui/core @material-ui/icons react-jsonschema-form
+yarn add @chakra-ui/core @chakra-ui/core react-jsonschema-form
 ```
 
 ### Installation

@@ -2,11 +2,11 @@ import React from 'react';
 
 import { FieldTemplateProps } from 'react-jsonschema-form';
 
-import FormControl from '@material-ui/core/FormControl';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
+import { FormControl } from '@chakra-ui/core'
+import { FormHelperText } from '@chakra-ui/core'
+import { List } from '@chakra-ui/core'
+import { ListItem } from '@chakra-ui/core'
+import { Typography } from '@chakra-ui/core'
 
 const FieldTemplate = ({
   id,

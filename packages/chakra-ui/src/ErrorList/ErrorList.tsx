@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ErrorIcon from '@material-ui/icons/Error';
-import ListItemText from '@material-ui/core/ListItemText';
-import Paper from '@material-ui/core/Paper';
+import { Box } from '@chakra-ui/core'
+import { Typography } from '@chakra-ui/core'
+import { List } from '@chakra-ui/core'
+import { ListItem } from '@chakra-ui/core'
+import { ListItemIcon } from '@chakra-ui/core'
+import { ErrorIcon } from '@chakra-ui/core'
+import { ListItemText } from '@chakra-ui/core'
+import { Paper } from '@chakra-ui/core'
 
 import { ErrorListProps } from 'react-jsonschema-form';
 

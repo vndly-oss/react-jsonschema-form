@@ -1,10 +1,10 @@
 import React from 'react';
 
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
+import { FormControl } from '@chakra-ui/core'
+import { FormControlLabel } from '@chakra-ui/core'
+import { FormLabel } from '@chakra-ui/core'
+import { Radio } from '@chakra-ui/core'
+import { RadioGroup } from '@chakra-ui/core'
 
 import { WidgetProps } from 'react-jsonschema-form';
 

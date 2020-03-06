@@ -3,7 +3,7 @@ import React from 'react';
 import { FieldProps } from 'react-jsonschema-form';
 
 import { makeStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@chakra-ui/core'
 
 const useStyles = makeStyles({
   root: {
