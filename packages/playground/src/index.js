@@ -1,5 +1,6 @@
 import React from "react";
 import { Theme as MuiTheme } from "@rjsf/material-ui";
+import { Theme as ChakraTheme } from "@rjsf/chakra-ui";
 import Playground from "./app";
 import { render } from "react-dom";
 
@@ -86,6 +87,10 @@ const themes = {
   "material-ui": {
     stylesheet: "",
     theme: MuiTheme,
+  },
+  "chakra-ui": {
+    stylesheet: "",
+    theme: ChakraTheme,
   },
 };
 

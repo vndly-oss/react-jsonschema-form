@@ -1,15 +1,7 @@
-import React from 'react';
-
-import { Grid } from '@chakra-ui/core'
-import { makeStyles } from '@material-ui/styles';
-
-import { ObjectFieldTemplateProps } from 'react-jsonschema-form';
-
-const useStyles = makeStyles({
-  root: {
-    marginTop: 10,
-  },
-});
+import Box from "@chakra-ui/core/dist/Box";
+import Stack from "@chakra-ui/core/dist/Stack";
+import { ObjectFieldTemplateProps } from "@rjsf/core";
+import React from "react";
 
 const ObjectFieldTemplate = ({
   DescriptionField,
@@ -21,11 +13,9 @@ const ObjectFieldTemplate = ({
   uiSchema,
   idSchema,
 }: ObjectFieldTemplateProps) => {
-  const classes = useStyles();
-
   return (
     <>
-      {(uiSchema['ui:title'] || title) && (
+      {(uiSchema["ui:title"] || title) && (
         <TitleField
           id={`${idSchema.$id}-title`}
           title={title}
@@ -38,18 +28,13 @@ const ObjectFieldTemplate = ({
           description={description}
         />
       )}
-      <Grid container={true} spacing={2} className={classes.root}>
+      <Stack spacing={2} mt={3}>
         {properties.map((element: any, index: number) => (
-          <Grid
-            item={true}
-            xs={12}
-            key={index}
-            style={{ marginBottom: '10px' }}
-          >
+          <Box key={index} mb={3}>
             {element.content}
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Stack>
     </>
   );
 };

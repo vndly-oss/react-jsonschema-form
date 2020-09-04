@@ -1,24 +1,13 @@
-import React from 'react';
-
-import { FieldProps } from 'react-jsonschema-form';
-
-import { makeStyles } from '@material-ui/styles';
-import { Typography } from '@chakra-ui/core'
-
-const useStyles = makeStyles({
-  root: {
-    marginTop: 5,
-  },
-});
+import Text from "@chakra-ui/core/dist/Text";
+import { FieldProps } from "@rjsf/core";
+import React from "react";
 
 const DescriptionField = ({ description }: FieldProps) => {
   if (description) {
-    const classes = useStyles();
-
     return (
-      <Typography variant="subtitle2" className={classes.root}>
+      <Text fontSize="sm" mb={2}>
         {description}
-      </Typography>
+      </Text>
     );
   }
 

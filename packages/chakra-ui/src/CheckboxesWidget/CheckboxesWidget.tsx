@@ -1,12 +1,7 @@
-import React from 'react';
-
-import { FormControl } from '@chakra-ui/core'
-import { FormLabel } from '@chakra-ui/core'
-import { FormGroup } from '@chakra-ui/core'
-import { FormControlLabel } from '@chakra-ui/core'
-import { Checkbox } from '@chakra-ui/core'
-
-import { WidgetProps } from 'react-jsonschema-form';
+import Checkbox from "@chakra-ui/core/dist/Checkbox";
+import CheckboxGroup from "@chakra-ui/core/dist/CheckboxGroup";
+import {WidgetProps} from "@rjsf/core";
+import React from "react";
 
 const selectValue = (value: any, selected: any, all: any) => {
   const at = all.indexOf(value);
@@ -22,15 +17,11 @@ const deselectValue = (value: any, selected: any) => {
 };
 
 const CheckboxesWidget = ({
-  schema,
-  label,
   id,
   disabled,
   options,
   value,
-  autofocus,
   readonly,
-  required,
   onChange,
   onBlur,
   onFocus,
@@ -57,40 +48,25 @@ const CheckboxesWidget = ({
   }: React.FocusEvent<HTMLButtonElement>) => onFocus(id, value);
 
   return (
-    <FormControl fullWidth={true} required={required}>
-      <FormLabel htmlFor={id}>{label || schema.title}</FormLabel>
-      <FormGroup>
-        {(enumOptions as any).map((option: any, index: number) => {
-          const checked = value.indexOf(option.value) !== -1;
-          const itemDisabled =
-            enumDisabled && (enumDisabled as any).indexOf(option.value) != -1;
-          const checkbox = (
-            <Checkbox
-              id={`${id}_${index}`}
-              checked={checked}
-              disabled={disabled || itemDisabled || readonly}
-              autoFocus={autofocus && index === 0}
-              onChange={_onChange(option)}
-              onBlur={_onBlur}
-              onFocus={_onFocus}
-            />
-          );
-          return inline ? (
-            <FormControlLabel
-              control={checkbox}
-              key={index}
-              label={option.label}
-            />
-          ) : (
-            <FormControlLabel
-              control={checkbox}
-              key={index}
-              label={option.label}
-            />
-          );
-        })}
-      </FormGroup>
-    </FormControl>
+    <CheckboxGroup isInline={inline as boolean}>
+      {(enumOptions as any).map((option: any, index: number) => {
+        const checked = value.indexOf(option.value) !== -1;
+        const itemDisabled =
+          enumDisabled && (enumDisabled as any).indexOf(option.value) != -1;
+        return (
+          <Checkbox
+            id={`${id}_${index}`}
+            value={option.value}
+            isChecked={checked}
+            isDisabled={disabled || itemDisabled || readonly}
+            onChange={_onChange(option)}
+            onBlur={_onBlur}
+            onFocus={_onFocus}>
+            {option.label}
+          </Checkbox>
+        );
+      })}
+    </CheckboxGroup>
   );
 };
 

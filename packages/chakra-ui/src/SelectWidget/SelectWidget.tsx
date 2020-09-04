@@ -1,106 +1,132 @@
-import React from 'react';
+import Select from "@chakra-ui/core/dist/Select";
+import React from "react";
+import PropTypes from "prop-types";
+import { asNumber, guessType } from "@rjsf/core/lib/utils";
 
-import { FormControl } from '@chakra-ui/core'
-import { MenuItem } from '@chakra-ui/core'
-import { Select } from '@chakra-ui/core'
-import { InputLabel } from '@chakra-ui/core'
-
-// import { WidgetProps } from 'react-jsonschema-form';
-import { asNumber, guessType } from 'react-jsonschema-form/lib/utils';
-
-const nums = new Set(['number', 'integer']);
+const nums = new Set(["number", "integer"]);
 
 /**
  * This is a silly limitation in the DOM where option change event values are
  * always retrieved as strings.
  */
-const processValue = (schema: any, value: any) => {
+function processValue(schema, value) {
   // "enum" is a reserved word, so only "type" and "items" can be destructured
   const { type, items } = schema;
-  if (value === '') {
+  if (value === "") {
     return undefined;
-  } else if (type === 'array' && items && nums.has(items.type)) {
+  } else if (type === "array" && items && nums.has(items.type)) {
     return value.map(asNumber);
-  } else if (type === 'boolean') {
-    return value === 'true';
-  } else if (type === 'number') {
+  } else if (type === "boolean") {
+    return value === "true";
+  } else if (type === "number") {
     return asNumber(value);
   }
 
   // If type is undefined, but an enum is present, try and infer the type from
   // the enum values
   if (schema.enum) {
-    if (schema.enum.every((x: any) => guessType(x) === 'number')) {
+    if (schema.enum.every(x => guessType(x) === "number")) {
       return asNumber(value);
-    } else if (schema.enum.every((x: any) => guessType(x) === 'boolean')) {
-      return value === 'true';
+    } else if (schema.enum.every(x => guessType(x) === "boolean")) {
+      return value === "true";
     }
   }
 
   return value;
-};
+}
 
-const SelectWidget = ({
-  schema,
-  id,
-  options,
-  label,
-  required,
-  disabled,
-  readonly,
-  value,
-  multiple,
-  autofocus,
-  onChange,
-  onBlur,
-  onFocus,
-}: any) => {
+function getValue(event, multiple) {
+  if (multiple) {
+    return [].slice
+      .call(event.target.options)
+      .filter(o => o.selected)
+      .map(o => o.value);
+  } else {
+    return event.target.value;
+  }
+}
+
+function SelectWidget(props) {
+  const {
+    schema,
+    id,
+    options,
+    value,
+    required,
+    disabled,
+    readonly,
+    multiple,
+    autofocus,
+    onChange,
+    onBlur,
+    onFocus,
+    placeholder,
+  } = props;
   const { enumOptions, enumDisabled } = options;
-
-  const emptyValue = multiple ? [] : '';
-
-  const _onChange = ({
-    target: { value },
-  }: React.ChangeEvent<{ name?: string; value: unknown }>) =>
-    onChange(processValue(schema, value));
-  const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
-    onBlur(id, processValue(schema, value));
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLInputElement>) =>
-    onFocus(id, processValue(schema, value));
-
+  const emptyValue = multiple ? [] : "";
   return (
-    <FormControl
-      fullWidth={true}
-      //error={!!rawErrors}
-      required={required}
-    >
-      <InputLabel shrink={true} htmlFor={id}>
-        {label || schema.title}
-      </InputLabel>
-      <Select
-        multiple={typeof multiple === 'undefined' ? false : multiple}
-        value={typeof value === 'undefined' ? emptyValue : value}
-        required={required}
-        disabled={disabled || readonly}
-        autoFocus={autofocus}
-        onChange={_onChange}
-        onBlur={_onBlur}
-        onFocus={_onFocus}
-      >
-        {(enumOptions as any).map(({ value, label }: any, i: number) => {
-          const disabled: any =
-            enumDisabled && (enumDisabled as any).indexOf(value) != -1;
-          return (
-            <MenuItem key={i} value={value} disabled={disabled}>
-              {label}
-            </MenuItem>
-          );
-        })}
-      </Select>
-    </FormControl>
+    <Select
+      id={id}
+      multiple={multiple}
+      value={typeof value === "undefined" ? emptyValue : value}
+      isRequired={required}
+      isDisabled={disabled}
+      isReadOnly={readonly}
+      autoFocus={autofocus}
+      onBlur={
+        onBlur &&
+        (event => {
+          const newValue = getValue(event, multiple);
+          onBlur(id, processValue(schema, newValue));
+        })
+      }
+      onFocus={
+        onFocus &&
+        (event => {
+          const newValue = getValue(event, multiple);
+          onFocus(id, processValue(schema, newValue));
+        })
+      }
+      onChange={event => {
+        const newValue = getValue(event, multiple);
+        onChange(processValue(schema, newValue));
+      }}>
+      {!multiple && schema.default === undefined && (
+        <option value="">{placeholder}</option>
+      )}
+      {enumOptions.map(({ value, label }, i) => {
+        const disabled = enumDisabled && enumDisabled.indexOf(value) != -1;
+        return (
+          <option key={i} value={value} disabled={disabled}>
+            {label}
+          </option>
+        );
+      })}
+    </Select>
   );
+}
+
+SelectWidget.defaultProps = {
+  autofocus: false,
 };
+
+if (process.env.NODE_ENV !== "production") {
+  SelectWidget.propTypes = {
+    schema: PropTypes.object.isRequired,
+    id: PropTypes.string.isRequired,
+    options: PropTypes.shape({
+      enumOptions: PropTypes.array,
+    }).isRequired,
+    value: PropTypes.any,
+    required: PropTypes.bool,
+    disabled: PropTypes.bool,
+    readonly: PropTypes.bool,
+    multiple: PropTypes.bool,
+    autofocus: PropTypes.bool,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
+  };
+}
 
 export default SelectWidget;

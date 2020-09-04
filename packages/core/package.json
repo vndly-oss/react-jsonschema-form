@@ -52,7 +52,8 @@
     "prop-types": "^15.7.2",
     "react-app-polyfill": "^1.0.4",
     "react-is": "^16.9.0",
-    "shortid": "^2.2.14"
+    "shortid": "^2.2.14",
+    "zustand": "^2.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

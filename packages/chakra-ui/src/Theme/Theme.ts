@@ -1,21 +1,17 @@
-import ArrayFieldTemplate from '../ArrayFieldTemplate';
-import ErrorList from '../ErrorList';
-import Fields from '../Fields';
-import FieldTemplate from '../FieldTemplate';
-import ObjectFieldTemplate from '../ObjectFieldTemplate';
-import Widgets from '../Widgets';
-
-import { ThemeProps } from 'react-jsonschema-form';
-import { getDefaultRegistry } from 'react-jsonschema-form/lib/utils';
-
-const { fields, widgets } = getDefaultRegistry();
+import ArrayFieldTemplate from "../ArrayFieldTemplate";
+import ErrorList from "../ErrorList";
+import Fields from "../Fields";
+import FieldTemplate from "../FieldTemplate";
+import ObjectFieldTemplate from "../ObjectFieldTemplate";
+import Widgets from "../Widgets";
+import { ThemeProps } from "@rjsf/core";
 
 const Theme: ThemeProps = {
   ArrayFieldTemplate,
-  fields: { ...fields, ...Fields },
+  fields: Fields,
   FieldTemplate,
   ObjectFieldTemplate,
-  widgets: { ...widgets, ...Widgets },
+  widgets: Widgets,
   ErrorList,
 };
 

@@ -1,22 +1,16 @@
-import React from 'react';
+import Radio from "@chakra-ui/core/dist/Radio";
+import RadioGroup from "@chakra-ui/core/dist/RadioGroup";
 
-import { FormControl } from '@chakra-ui/core'
-import { FormControlLabel } from '@chakra-ui/core'
-import { FormLabel } from '@chakra-ui/core'
-import { Radio } from '@chakra-ui/core'
-import { RadioGroup } from '@chakra-ui/core'
-
-import { WidgetProps } from 'react-jsonschema-form';
+import { WidgetProps } from "@rjsf/core";
+import React from "react";
 
 const RadioWidget = ({
   id,
   schema,
   options,
   value,
-  required,
   disabled,
   readonly,
-  label,
   onChange,
   onBlur,
   onFocus,
@@ -26,44 +20,37 @@ const RadioWidget = ({
   const { enumOptions, enumDisabled } = options;
 
   const _onChange = ({}, value: any) =>
-    onChange(schema.type == 'boolean' ? value !== 'false' : value);
+    onChange(schema.type == "boolean" ? value !== "false" : value);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
     onBlur(id, value);
   const _onFocus = ({
     target: { value },
   }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);
 
-  const row = options ? options.inline : false;
+  const inline = !!options.inline;
 
   return (
-    <FormControl fullWidth={true} required={required}>
-      <FormLabel htmlFor={id}>{label || schema.title}</FormLabel>
-      <RadioGroup
-        name={name}
-        value={`${value}`}
-        row={row as boolean}
-        onChange={_onChange}
-        onBlur={_onBlur}
-        onFocus={_onFocus}
-      >
-        {(enumOptions as any).map((option: any, i: number) => {
-          const itemDisabled =
-            enumDisabled && (enumDisabled as any).indexOf(option.value) != -1;
+    <RadioGroup
+      name={name}
+      value={`${value}`}
+      isInline={inline}
+      onChange={_onChange}
+      onBlur={_onBlur}
+      onFocus={_onFocus}>
+      {(enumOptions as any).map((option: any, i: number) => {
+        const itemDisabled =
+          enumDisabled && (enumDisabled as any).indexOf(option.value) != -1;
 
-          const radio = (
-            <FormControlLabel
-              control={<Radio color="primary" key={i} />}
-              label={`${option.label}`}
-              value={`${option.value}`}
-              key={i}
-              disabled={disabled || itemDisabled || readonly}
-            />
-          );
-
-          return radio;
-        })}
-      </RadioGroup>
-    </FormControl>
+        return (
+          <Radio
+            value={`${option.value}`}
+            key={i}
+            isDisabled={disabled || itemDisabled || readonly}>
+            {option.label}
+          </Radio>
+        );
+      })}
+    </RadioGroup>
   );
 };
 

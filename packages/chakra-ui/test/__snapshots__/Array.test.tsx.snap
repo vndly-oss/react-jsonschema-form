@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array fields array 1`] = `
+<form
+  className="rjsf"
+  noValidate={false}
+  onSubmit={[Function]}
+>
+  <div
+    className="ChakraFormControl-root ChakraFormControl-fullWidth"
+  >
+    <div
+      className="ChakraPaper-root ChakraPaper-elevation2 ChakraPaper-rounded"
+    >
+      <div
+        className="ChakraBox-root ChakraBox-root-33"
+      >
+        <div />
+        <div
+          className="ChakraGrid-root ChakraGrid-container"
+        >
+          <div
+            className="ChakraGrid-root ChakraGrid-container ChakraGrid-justify-xs-flex-end"
+          >
+            <div
+              className="ChakraGrid-root ChakraGrid-item"
+            >
+              <div
+                className="ChakraBox-root ChakraBox-root-137"
+              >
+                <button
+                  className="ChakraButtonBase-root ChakraButton-root ChakraButton-text array-item-add ChakraButton-textSecondary"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onDragLeave={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <span
+                    className="ChakraButton-label"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="ChakraSvgIcon-root"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                      />
+                    </svg>
+                     Add Item
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      className="btn btn-info"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
+
+exports[`array fields checkboxes 1`] = `
+<form
+  className="rjsf"
+  noValidate={false}
+  onSubmit={[Function]}
+>
+  <div
+    className="ChakraFormControl-root ChakraFormControl-fullWidth"
+  >
+    <div
+      className="ChakraFormControl-root ChakraFormControl-fullWidth"
+    >
+      <label
+        className="ChakraFormLabel-root ChakraInputLabel-root ChakraInputLabel-formControl ChakraInputLabel-animated ChakraInputLabel-shrink"
+        data-shrink={true}
+        htmlFor="root"
+      />
+      <div
+        className="ChakraInputBase-root ChakraInput-root ChakraInput-underline ChakraInputBase-formControl ChakraInput-formControl"
+        onClick={[Function]}
+        required={false}
+      >
+        <div
+          aria-haspopup="listbox"
+          aria-labelledby=" "
+          className="ChakraSelect-root ChakraSelect-select ChakraSelect-selectMenu ChakraInputBase-input ChakraInput-input ChakraInputBase-inputSelect"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </div>
+        <input
+          autoFocus={false}
+          onAnimationStart={[Function]}
+          type="hidden"
+          value=""
+        />
+        <svg
+          aria-hidden="true"
+          className="ChakraSvgIcon-root ChakraSelect-icon"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      className="btn btn-info"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
+
+exports[`array fields fixed array 1`] = `
+<form
+  className="rjsf"
+  noValidate={false}
+  onSubmit={[Function]}
+>
+  <div
+    className="ChakraFormControl-root ChakraFormControl-fullWidth"
+  >
+    <div
+      className="ChakraPaper-root ChakraPaper-elevation2 ChakraPaper-rounded"
+    >
+      <div
+        className="ChakraBox-root ChakraBox-root-178"
+      >
+        <div />
+        <div
+          className="ChakraGrid-root ChakraGrid-container"
+        >
+          <div
+            className="ChakraGrid-root ChakraGrid-container ChakraGrid-align-items-xs-center"
+          >
+            <div
+              className="ChakraGrid-root ChakraGrid-item ChakraGrid-grid-xs-true"
+            >
+              <div
+                className="ChakraBox-root ChakraBox-root-179"
+              >
+                <div
+                  className="ChakraPaper-root ChakraPaper-elevation2 ChakraPaper-rounded"
+                >
+                  <div
+                    className="ChakraBox-root ChakraBox-root-180"
+                  >
+                    <div
+                      className="ChakraFormControl-root ChakraFormControl-fullWidth"
+                    >
+                      <div
+                        className="ChakraFormControl-root ChakraFormControl-fullWidth"
+                      >
+                        <div
+                          className="ChakraFormControl-root ChakraTextField-root"
+                        >
+                          <div
+                            className="ChakraInputBase-root ChakraInput-root ChakraInput-underline ChakraInputBase-formControl ChakraInput-formControl"
+                            onClick={[Function]}
+                          >
+                            <input
+                              aria-invalid={false}
+                              autoFocus={false}
+                              className="ChakraInputBase-input ChakraInput-input"
+                              disabled={false}
+                              id="root_0"
+                              name="nodejs"
+                              onAnimationStart={[Function]}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              required={true}
+                              type="string"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="ChakraGrid-root ChakraGrid-container ChakraGrid-align-items-xs-center"
+          >
+            <div
+              className="ChakraGrid-root ChakraGrid-item ChakraGrid-grid-xs-true"
+            >
+              <div
+                className="ChakraBox-root ChakraBox-root-214"
+              >
+                <div
+                  className="ChakraPaper-root ChakraPaper-elevation2 ChakraPaper-rounded"
+                >
+                  <div
+                    className="ChakraBox-root ChakraBox-root-215"
+                  >
+                    <div
+                      className="ChakraFormControl-root ChakraFormControl-fullWidth"
+                    >
+                      <div
+                        className="ChakraFormControl-root ChakraFormControl-fullWidth"
+                      >
+                        <div
+                          className="ChakraFormControl-root ChakraTextField-root"
+                        >
+                          <div
+                            className="ChakraInputBase-root ChakraInput-root ChakraInput-underline ChakraInputBase-formControl ChakraInput-formControl"
+                            onClick={[Function]}
+                          >
+                            <input
+                              aria-invalid={false}
+                              autoFocus={false}
+                              className="ChakraInputBase-input ChakraInput-input"
+                              disabled={false}
+                              id="root_1"
+                              name="nodejs"
+                              onAnimationStart={[Function]}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              required={true}
+                              type="number"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      className="btn btn-info"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;

@@ -1,26 +1,20 @@
-import React from 'react';
-
-import { Checkbox } from '@chakra-ui/core'
-import { FormControl } from '@chakra-ui/core'
-import { FormControlLabel } from '@chakra-ui/core'
-
-import { WidgetProps } from 'react-jsonschema-form';
+import Checkbox from "@chakra-ui/core/dist/Checkbox";
+import {WidgetProps} from "@rjsf/core";
+import React from "react";
 
 const CheckboxWidget = (props: WidgetProps) => {
   const {
     id,
     value,
-    required,
     disabled,
     readonly,
     label,
-    autofocus,
     onChange,
     onBlur,
     onFocus,
   } = props;
 
-  const _onChange = ({}, checked: boolean) => onChange(checked);
+  const _onChange = ({ target: { checked } }) => onChange(checked);
   const _onBlur = ({
     target: { value },
   }: React.FocusEvent<HTMLButtonElement>) => onBlur(id, value);
@@ -29,23 +23,15 @@ const CheckboxWidget = (props: WidgetProps) => {
   }: React.FocusEvent<HTMLButtonElement>) => onFocus(id, value);
 
   return (
-    <FormControl fullWidth={true} required={required}>
-      <FormControlLabel
-        control={
-          <Checkbox
-            id={id}
-            checked={typeof value === 'undefined' ? false : value}
-            required={required}
-            disabled={disabled || readonly}
-            autoFocus={autofocus}
-            onChange={_onChange}
-            onBlur={_onBlur}
-            onFocus={_onFocus}
-          />
-        }
-        label={label}
-      />
-    </FormControl>
+    <Checkbox
+      id={id}
+      isChecked={typeof value === "undefined" ? false : value}
+      isDisabled={disabled || readonly}
+      onChange={_onChange}
+      onBlur={_onBlur}
+      onFocus={_onFocus}>
+      {label}
+    </Checkbox>
   );
 };
 

@@ -1,40 +1,36 @@
-import React from 'react';
-
-import { FieldTemplateProps } from 'react-jsonschema-form';
-
-import { FormControl } from '@chakra-ui/core'
-import { FormHelperText } from '@chakra-ui/core'
-import { List } from '@chakra-ui/core'
-import { ListItem } from '@chakra-ui/core'
-import { Typography } from '@chakra-ui/core'
+import FormControl from "@chakra-ui/core/dist/FormControl";
+import FormErrorMessage from "@chakra-ui/core/dist/FormErrorMessage";
+import FormHelperText from "@chakra-ui/core/dist/FormHelperText";
+import FormLabel from "@chakra-ui/core/dist/FormLabel";
+import { FieldTemplateProps } from "@rjsf/core";
+import React from "react";
 
 const FieldTemplate = ({
   id,
   children,
-  displayLabel,
+  label,
+  disabled,
+  readonly,
+  required,
   rawErrors = [],
   rawHelp,
-  rawDescription,
+  description,
 }: FieldTemplateProps) => {
   return (
-    <FormControl fullWidth={true} error={rawErrors.length ? true : false}>
+    <FormControl
+      isDisabled={disabled}
+      isReadOnly={readonly}
+      isRequired={required}
+      isInvalid={!!rawErrors.length}>
+      <FormLabel>{label}</FormLabel>
+      {description}
       {children}
-      {displayLabel && rawDescription ? (
-        <Typography variant="caption" color="textSecondary">
-          {rawDescription}
-        </Typography>
-      ) : null}
-      {rawErrors.length > 0 && (
-        <List dense={true}>
-          {rawErrors.map((error, i: number) => {
-            return (
-              <ListItem key={i}>
-                <FormHelperText id={id}>- {error}</FormHelperText>
-              </ListItem>
-            );
-          })}
-        </List>
-      )}
+      {rawErrors.length > 0 &&
+        rawErrors.map((error, i: number) => (
+          <FormErrorMessage key={i} id={id}>
+            {error}
+          </FormErrorMessage>
+        ))}
       {rawHelp && <FormHelperText id={id}>{rawHelp}</FormHelperText>}
     </FormControl>
   );

@@ -1,2 +1,2 @@
-export { default } from './MuiForm';
-export * from './MuiForm';
+export { default } from "./ChakraForm";
+export * from "./ChakraForm";

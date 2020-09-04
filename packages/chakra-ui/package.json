@@ -1,6 +1,6 @@
 {
   "name": "@rjsf/chakra-ui",
-  "version": "2.0.0-alpha.2",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/rjsf-chakra-ui.esm.js",
   "typings": "dist/index.d.ts",
@@ -10,43 +10,41 @@
   ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
-    "clean": "rimraf dist",
-    "test": "tsdx test --env=jsdom",
-    "npm": "np",
-    "publish-to-npm": "run-s clean build npm"
+    "build": "rimraf dist && tsdx build",
+    "test": "tsdx test"
   },
   "peerDependencies": {
-    "@chakra-ui/core": "^0.6.1",
+    "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "react": ">=16",
-    "react-jsonschema-form": "^1.6.1"
+    "@rjsf/core": "^2.0.0-alpha.6",
+    "react": ">=16"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@chakra-ui/core": "^0.6.1",
+    "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
+    "@rjsf/core": "^2.0.1",
     "@types/jest": "^24.0.15",
     "@types/json-schema": "^7.0.3",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-jsonschema-form": "^1.6.2",
-    "np": "^5.0.3",
-    "npm-run-all": "^4.1.5",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/sinon": "^9.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-jsonschema-form": "^1.6.1",
+    "react-test-renderer": "^16.13.1",
     "rimraf": "^2.6.3",
-    "tsdx": "^0.7.2",
+    "tsdx": "^0.13.1",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3"
   },
@@ -71,7 +69,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rjsf-team/react-jsonschema-form"
+    "url": "git+https://github.com/rjsf-team/react-jsonschema-form.git"
   },
   "license": "MIT"
 }
