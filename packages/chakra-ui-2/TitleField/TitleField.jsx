@@ -1,8 +1,5 @@
 import React from 'react'
-
-import Box from '@chakra-ui/core/dist/Box'
-import Divider from '@chakra-ui/core/dist/Divider'
-import Heading from '@chakra-ui/core/dist/Heading'
+import { Box, Divider, Heading } from '@chakra-ui/react'
 
 const TitleField = ({ title }) => (
   <Box mb={1} mt={1}>

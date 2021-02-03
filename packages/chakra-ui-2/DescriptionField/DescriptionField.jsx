@@ -1,4 +1,4 @@
-import Text from '@chakra-ui/core/dist/Text'
+import { Text } from '@chakra-ui/react'
 import React from 'react'
 
 const DescriptionField = ({ description }) => {

@@ -1,6 +1,5 @@
-import Box from '@chakra-ui/core/dist/Box'
-import Heading from '@chakra-ui/core/dist/Heading'
-import List, { ListIcon, ListItem } from '@chakra-ui/core/dist/List'
+import { WarningTwoIcon } from '@chakra-ui/icons'
+import { Box, Heading, List, ListIcon, ListItem } from '@chakra-ui/react'
 import React from 'react'
 
 const ErrorList = ({ errors }) => (
@@ -10,7 +9,7 @@ const ErrorList = ({ errors }) => (
       {errors.map((error, i) => (
         // eslint-disable-next-line react/no-array-index-key
         <ListItem key={i}>
-          <ListIcon icon="warning-2" />
+          <ListIcon as={<WarningTwoIcon />} />
           {error.stack}
         </ListItem>
       ))}

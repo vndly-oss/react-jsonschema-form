@@ -24,6 +24,11 @@ export const Number = () => {
         title: 'Number enum',
         enum: [1, 2, 3]
       },
+      numberEnumRadioInline: {
+        type: 'number',
+        title: 'Number enum (inline)',
+        enum: [1, 2, 3]
+      },
       integerRange: {
         title: 'Integer range',
         type: 'integer',
@@ -45,6 +50,9 @@ export const Number = () => {
       'ui:widget': 'updown'
     },
     numberEnumRadio: {
+      'ui:widget': 'radio'
+    },
+    numberEnumRadioInline: {
       'ui:widget': 'radio',
       'ui:options': {
         inline: true

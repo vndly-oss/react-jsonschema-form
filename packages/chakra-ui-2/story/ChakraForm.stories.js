@@ -1,4 +1,4 @@
-import { Box, Grid } from '@chakra-ui/core'
+import { Box, Grid } from '@chakra-ui/react'
 import React from 'react'
 import { Basic } from '~/components/jsonschema/chakraTheme/story/Basic'
 import { Number } from '~/components/jsonschema/chakraTheme/story/Numbers'

@@ -1,4 +1,4 @@
-import Slider, { SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/core/dist/Slider'
+import { Slider, SliderFilledTrack, SliderThumb, SliderTrack } from '@chakra-ui/react'
 import { rangeSpec } from 'react-jsonschema-form/lib/utils'
 import React from 'react'
 

@@ -30,9 +30,11 @@ export const Widgets = () => {
             description: 'This is the checkbox-description'
           },
           radio: {
-            type: 'boolean',
+            type: 'number',
             title: 'radio buttons',
-            description: 'This is the radio-description'
+            description: 'This is the radio-description',
+            enum: [1, 0],
+            enumNames: ['Option 1', 'Option 2']
           },
           select: {
             type: 'boolean',

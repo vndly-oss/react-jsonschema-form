@@ -1,4 +1,4 @@
-import Input from '@chakra-ui/core/dist/Input'
+import { Input, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -8,7 +8,7 @@ function BaseInput({ id, ...props }) {
   if (!id) {
     throw new Error(`no id for props ${JSON.stringify(props)}`)
   }
-  const { value, readonly, disabled, autofocus, onBlur, onFocus, options, schema, ..._inputProps } = props
+  const { value, readonly, disabled, autofocus, onBlur, onFocus, options, schema, formContext, ..._inputProps } = props
 
   const inputProps = _inputProps
 
@@ -54,7 +54,7 @@ function BaseInput({ id, ...props }) {
     return props.onChange(value === '' ? options.emptyValue : value)
   }
 
-  return (
+  return !formContext?.displayAsText ? (
     <>
       <Input
         key={inputProps.id}
@@ -77,6 +77,8 @@ function BaseInput({ id, ...props }) {
         </datalist>
       ) : null}
     </>
+  ) : (
+    <Text color="gray.800">{value}</Text>
   )
 }
 

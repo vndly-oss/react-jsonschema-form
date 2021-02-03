@@ -1,5 +1,6 @@
-import Textarea from '@chakra-ui/core/dist/Textarea'
+import { Textarea, Text } from '@chakra-ui/react'
 import React from 'react'
+import { newLineToBrFormatter } from '~/common/reactStringUtils'
 
 const TextareaWidget = ({
   id,
@@ -11,13 +12,16 @@ const TextareaWidget = ({
   onBlur,
   onFocus,
   onChange,
-  options
+  options,
+  formContext
 }) => {
   const _onChange = ({ target: { value } }) => onChange(value === '' ? options.emptyValue : value)
   const _onBlur = ({ target: { value } }) => onBlur(id, value)
   const _onFocus = ({ target: { value } }) => onFocus(id, value)
 
-  return (
+  return formContext?.displayAsText ? (
+    <Text>{newLineToBrFormatter(value)}</Text>
+  ) : (
     <Textarea
       id={id}
       value={value}

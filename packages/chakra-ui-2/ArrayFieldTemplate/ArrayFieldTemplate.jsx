@@ -1,5 +1,4 @@
-import Box from '@chakra-ui/core/dist/Box'
-import Flex from '@chakra-ui/core/dist/Flex'
+import { Flex, Box, Stack } from '@chakra-ui/react'
 import { isMultiSelect, getDefaultRegistry } from 'react-jsonschema-form/lib/utils'
 import React from 'react'
 import AddButton from '../AddButton/AddButton'
@@ -167,7 +166,7 @@ const DefaultNormalArrayFieldTemplate = ({
         />
       )}
 
-      <Flex key={`array-item-list-${idSchema.$id}`}>
+      <Stack key={`array-item-list-${idSchema.$id}`}>
         {items && items.map(p => DefaultArrayItem(p))}
 
         {canAdd && (
@@ -177,7 +176,7 @@ const DefaultNormalArrayFieldTemplate = ({
             </Box>
           </Flex>
         )}
-      </Flex>
+      </Stack>
     </Box>
   )
 }

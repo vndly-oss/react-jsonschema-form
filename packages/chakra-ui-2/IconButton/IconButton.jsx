@@ -1,16 +1,18 @@
 import React from 'react'
-import ChakraIconButton from '@chakra-ui/core/dist/IconButton'
+import { IconButton as ChakraIconButton } from '@chakra-ui/react'
+import { AddIcon, MinusIcon, ArrowUpIcon, ArrowDownIcon } from '@chakra-ui/icons'
 
 const mappings = {
-  remove: 'minus',
-  plus: 'add',
-  'arrow-up': 'arrow-up',
-  'arrow-down': 'arrow-down'
+  remove: MinusIcon,
+  plus: AddIcon,
+  'arrow-up': ArrowUpIcon,
+  'arrow-down': ArrowDownIcon
 }
 
 const IconButton = props => {
   const { icon, ...otherProps } = props
-  return <ChakraIconButton {...otherProps} size="sm" icon={mappings[icon]} />
+  const Icon = mappings[icon]
+  return <ChakraIconButton {...otherProps} size="sm" icon={<Icon />} />
 }
 
 export default IconButton

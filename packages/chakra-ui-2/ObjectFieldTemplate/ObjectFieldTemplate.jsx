@@ -1,5 +1,4 @@
-import Box from '@chakra-ui/core/dist/Box'
-import Stack from '@chakra-ui/core/dist/Stack'
+import { Box, Stack } from '@chakra-ui/react'
 import React from 'react'
 
 const ObjectFieldTemplate = ({

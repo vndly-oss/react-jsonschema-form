@@ -1,4 +1,4 @@
-import Select from '@chakra-ui/core/dist/Select'
+import { Select } from '@chakra-ui/react'
 import React from 'react'
 import PropTypes from 'prop-types'
 import { guessType, asNumber } from 'react-jsonschema-form/lib/utils'
@@ -95,15 +95,16 @@ function SelectWidget(props) {
         onChange(processValue(schema, newValue))
       }}>
       {!multiple && schema.default === undefined && <option value="">{placeholder}</option>}
-      {enumOptions.map(({ value, label }, i) => {
-        const disabled = enumDisabled && enumDisabled.indexOf(value) !== -1
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          <option key={i} value={value} disabled={disabled}>
-            {label}
-          </option>
-        )
-      })}
+      {Array.isArray(enumOptions) &&
+        enumOptions.map(({ value, label }, i) => {
+          const disabled = enumDisabled && enumDisabled.indexOf(value) !== -1
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <option key={i} value={value} disabled={disabled}>
+              {label}
+            </option>
+          )
+        })}
     </Select>
   )
 }
