@@ -2,6 +2,7 @@ import React from "react";
 import { create } from "jss";
 import { jssPreset, StylesProvider } from "@material-ui/core/styles";
 import Frame from "react-frame-component";
+import { theme as chakraTheme, ThemeProvider, CSSReset } from "@chakra-ui/core";
 
 /*
 Adapted from https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/DemoSandboxed.js
@@ -69,6 +70,11 @@ function DemoFrame(props) {
             })}
           </StylesProvider>
         ) : null
+      ) : theme === "chakra-ui" ? (
+        <ThemeProvider theme={chakraTheme}>
+          <CSSReset />
+          {children}
+        </ThemeProvider>
       ) : (
         children
       )}

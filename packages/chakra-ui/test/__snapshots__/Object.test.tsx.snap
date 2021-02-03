@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`object fields object 1`] = `
+<form
+  className="rjsf"
+  noValidate={false}
+  onSubmit={[Function]}
+>
+  <div
+    className="ChakraFormControl-root ChakraFormControl-fullWidth"
+  >
+    <div
+      className="ChakraGrid-root makeStyles-root-5 ChakraGrid-container ChakraGrid-spacing-xs-2"
+    >
+      <div
+        className="ChakraGrid-root ChakraGrid-item ChakraGrid-grid-xs-12"
+        style={
+          Object {
+            "marginBottom": "10px",
+          }
+        }
+      >
+        <div
+          className="ChakraFormControl-root ChakraFormControl-fullWidth"
+        >
+          <div
+            className="ChakraFormControl-root ChakraFormControl-fullWidth"
+          >
+            <div
+              className="ChakraFormControl-root ChakraTextField-root"
+            >
+              <label
+                className="ChakraFormLabel-root ChakraInputLabel-root ChakraInputLabel-formControl ChakraInputLabel-animated"
+                data-shrink={false}
+                htmlFor="root_a"
+                id="root_a-label"
+              >
+                a
+              </label>
+              <div
+                className="ChakraInputBase-root ChakraInput-root ChakraInput-underline ChakraInputBase-formControl ChakraInput-formControl"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="ChakraInputBase-input ChakraInput-input"
+                  disabled={false}
+                  id="root_a"
+                  name="nodejs"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  type="string"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ChakraGrid-root ChakraGrid-item ChakraGrid-grid-xs-12"
+        style={
+          Object {
+            "marginBottom": "10px",
+          }
+        }
+      >
+        <div
+          className="ChakraFormControl-root ChakraFormControl-fullWidth"
+        >
+          <div
+            className="ChakraFormControl-root ChakraFormControl-fullWidth"
+          >
+            <div
+              className="ChakraFormControl-root ChakraTextField-root"
+            >
+              <label
+                className="ChakraFormLabel-root ChakraInputLabel-root ChakraInputLabel-formControl ChakraInputLabel-animated"
+                data-shrink={false}
+                htmlFor="root_b"
+                id="root_b-label"
+              >
+                b
+              </label>
+              <div
+                className="ChakraInputBase-root ChakraInput-root ChakraInput-underline ChakraInputBase-formControl ChakraInput-formControl"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  autoFocus={false}
+                  className="ChakraInputBase-input ChakraInput-input"
+                  disabled={false}
+                  id="root_b"
+                  name="nodejs"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  type="number"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      className="btn btn-info"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+`;
