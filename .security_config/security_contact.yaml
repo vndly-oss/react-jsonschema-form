@@ -1,0 +1,31 @@
+# This file contains contact info for the team that maintains
+# this repo. This information will be used by security in the
+# event that we need to contact you about security issues
+# discovered in this code.
+#
+# See https://wolinks.com/repocontact for more information.
+#
+# You may use the Red Hat YAML extension in VS Code to validate this file.
+# yaml-language-server: =https://security-api.appsec.inday.io/schemas/security_contact.json
+
+version: "1.0"
+
+# You may optionally reference a separate security_contact.yaml file
+# to use information from that file for this repo. If you choose
+# to reference another file here, the remainder of this file may either
+# be left blank, or you may include specific sections where you wish to
+# override the contents of the referenced file. When overriding a referenced
+# file, the entire top-level object (e.g. 'owners') is overridden and
+# must be specified here instead.
+#
+# Supported reference path formats include:
+#    - "/another_project_in_this_repo/.security_config/security_contact.yaml"
+#    - "/another_project_in_this_repo/"
+#      (will append '.security_config/security_contact.yaml' to this location)
+#    - "../another_project_in_this_repo/.security_config/security_contact.yaml"
+#    - "git::https://ghe.megaleo.com/org/repo/"
+#      (will use the '.security_config/security_contact.yaml' in this repo)
+#    - "https://ghe.megaleo.com/raw/org/repo/branch/.security_config/security_contact.yaml"
+#
+# Uncomment the line below to include a reference:
+include: "https://github.com/vndly-oss/security-config/blob/master/.security_config/security_contact.yaml"
